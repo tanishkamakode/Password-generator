@@ -44,18 +44,34 @@ function generatePassword(lower, upper, number, symbol, length) {
   if (number) result += randomNumber(individual);
 
   if (symbol) result += randomSymbol(individual);
-
-  console.log(result);
+  // console.log(result);
 
   // Randmoly arranges created individual passwords
   let finalResult = "";
   for (let i = 0; i < result.length; i++)
     finalResult += result[Math.floor(Math.random() * result.length)];
 
-  console.log(finalResult);
+  // console.log(finalResult);
+
   // Places password in resultbox by maipulating value attribute
   document.getElementById("result").value = finalResult;
 }
+
+// Copy to the clipboard
+copy.addEventListener("click", function () {
+  const textarea = document.createElement("textarea");
+  const password = result.value;
+  // console.log(password);
+
+  if (!password) return;
+
+  textarea.value = password;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+  alert("Password copied to clipboard!");
+});
 
 function randomLower(length) {
   const lower = "abcdefghijklmnopqrstuvwxyz";
