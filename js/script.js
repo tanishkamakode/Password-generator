@@ -53,16 +53,15 @@ function generatePassword(lower, upper, number, symbol, length) {
     finalResult += result[Math.floor(Math.random() * result.length)];
 
   console.log(finalResult);
-  // Places password in resultbox
-  // document.getElementById("result").innerText = finalResult;
-  return finalResult;
+  // Places password in resultbox by maipulating value attribute
+  document.getElementById("result").value = finalResult;
 }
 
 function randomLower(length) {
   const lower = "abcdefghijklmnopqrstuvwxyz";
   let result = "";
   for (let i = 0; i < length; i++)
-    result += lower[Math.floor(Math.random() * length)];
+    result += lower[Math.floor(Math.random() * lower.length)];
 
   return result;
 }
@@ -71,7 +70,7 @@ function randomUpper(length) {
   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let result = "";
   for (let i = 0; i < length; i++)
-    result += upper[Math.floor(Math.random() * length)];
+    result += upper[Math.floor(Math.random() * upper.length)];
 
   return result;
 }
@@ -80,7 +79,7 @@ function randomNumber(length) {
   const number = "0123456789";
   let result = "";
   for (let i = 0; i < length; i++)
-    result += number[Math.floor(Math.random() * length)];
+    result += number[Math.floor(Math.random() * number.length)];
 
   return result;
 }
@@ -89,7 +88,7 @@ function randomSymbol(length) {
   const symbol = "!@#$%^&*_+-=";
   let result = "";
   for (let i = 0; i < length; i++)
-    result += symbol[Math.floor(Math.random() * length)];
+    result += symbol[Math.floor(Math.random() * symbol.length)];
 
   return result;
 }
