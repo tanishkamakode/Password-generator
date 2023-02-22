@@ -1,3 +1,5 @@
+"use strict";
+
 // Selected elements by their IDs
 const result = document.getElementById("result");
 const copy = document.getElementById("copy");
@@ -44,14 +46,25 @@ function generatePassword(lower, upper, number, symbol, length) {
   if (number) result += randomNumber(individual);
 
   if (symbol) result += randomSymbol(individual);
-  // console.log(result);
+  console.log(result);
 
   // Randmoly arranges created individual passwords
   let finalResult = "";
-  for (let i = 0; i < result.length; i++)
-    finalResult += result[Math.floor(Math.random() * result.length)];
+  let count = 0;
 
-  // console.log(finalResult);
+  // Takes every alternate character from result
+  for (let i = 0; i < result.length; i += 2) {
+    finalResult += result[count];
+    count = count + 2;
+  }
+
+  count = 1;
+  for (let j = 1; j < result.length; j += 2) {
+    finalResult += result[count];
+    count = count + 2;
+  }
+
+  console.log(finalResult);
 
   // Places password in resultbox by maipulating value attribute
   document.getElementById("result").value = finalResult;
