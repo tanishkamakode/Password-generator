@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Montserrat Alternatives -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./password.png" />
+    <title>Password Generator</title>
+  </head>
+  <body class="bg-[#EDF5E1]">
+    <section id="main">
+      <!-- heading -->
+      <h1
+        class="heading font-MontserratAlternates text-[#379683] text-center text-3xl md:text-5xl mt-20"
+      >
+        Password Generator
+      </h1>
+
+      <!-- Main box -->
+      <div
+        class="box font-Montserrat max-w-sm md:max-w-xs bg-[#8EE4AF] mx-16 md:mx-auto mt-16 px-2 py-8 rounded-xl"
+      >
+        <!-- Password box -->
+        <div class="flex items-center gap-3 mb-4">
+          <!-- Password -->
+          <input
+            type="text"
+            id="result"
+            class="w-56 h-8 md:w-80 rounded-xl focus:outline-none px-4"
+          />
+
+          <!-- Copy icon -->
+          <img
+            src="./images/icons8-clone-figure-48.png"
+            alt="copy"
+            id="copy"
+            class="w-6"
+          />
+        </div>
+
+        <!-- Length box -->
+        <div class="flex items-center justify-between gap-3 mb-2 md:pl-2">
+          <p class="text-lg text-white md:text-xl">Enter password length :</p>
+          <input
+            type="text"
+            id="length"
+            class="w-10 rounded-md focus:outline-none px-2"
+          />
+        </div>
+
+        <!-- Checkbox Section -->
+        <div class="flex-col pl-2 text-white space-y-2">
+          <div class="flex items-center justify-start gap-4">
+            <input
+              type="checkbox"
+              id="uppercase"
+              class="h-4 w-4 accent-[#379683]"
+            />
+            <p class="text-lg">Uppercase</p>
+          </div>
+
+          <div class="flex items-center justify-start gap-4">
+            <input
+              type="checkbox"
+              id="lowercase"
+              class="h-4 w-4 accent-[#379683]"
+            />
+            <p class="text-lg">Lowercase</p>
+          </div>
+
+          <div class="flex items-center justify-start gap-4">
+            <input
+              type="checkbox"
+              id="number"
+              class="h-4 w-4 accent-[#379683]"
+            />
+            <p class="text-lg">Number</p>
+          </div>
+
+          <div class="flex items-center justify-start gap-4">
+            <input
+              type="checkbox"
+              id="symbol"
+              class="h-4 w-4 accent-[#379683]"
+            />
+            <p class="text-lg">Symbol</p>
+          </div>
+        </div>
+
+        <!-- Generate button -->
+        <div class="text-center">
+          <button
+            id="btn"
+            class="bg-[#379683] text-white px-4 py-2 rounded-full mt-4"
+          >
+            Generate Password
+          </button>
+          <p class="hidden mt-2 text-sm md:text-xs">
+            Character option not selected!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
